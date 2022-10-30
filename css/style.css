@@ -5,7 +5,7 @@ html {
 }
 
 a {
-  color: #5e607a;
+  color: #00001a;
 }
 
 h1 {
@@ -40,17 +40,19 @@ aside h3 {
 /* Layout */
 
 body {
-  padding: 6em 1.1em;
+  padding: 2.8rem 1.6rem;
   background-color: hsl(36, 100%, 99%);
   color: #5e607a;
   font-family: "Inter", sans-serif;
   font-size: 1.5rem;
   display: grid;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
+/* Navigation + Header */
+
 .wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
 }
@@ -60,4 +62,70 @@ ul {
   gap: 2.5em;
 }
 
-/*  */
+nav {
+  position: fixed;
+  right: -100%;
+  top: 0;
+  width: 60%;
+  background-color: white;
+  height: 100vh;
+  padding: 1.5em;
+  /* padding: 4.6em; */
+  transition: right 0.5s ease-in-out;
+}
+
+.close-btn {
+  cursor: pointer;
+  display: block;
+  width: 3rem;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-bottom: 6.6rem;
+}
+
+.menu-btn {
+  width: 3rem;
+  cursor: pointer;
+}
+
+.open {
+  right: 0%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 5rem;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@media screen and (min-width: 600px) {
+  .menu-btn,
+  .close-btn {
+    display: none;
+  }
+
+  nav {
+    position: unset;
+    height: auto;
+    background: none;
+    padding: 0;
+    width: auto;
+  }
+
+  ul {
+    flex-direction: row;
+  }
+  nav a {
+    color: #5e607a;
+  }
+}
